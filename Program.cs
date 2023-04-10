@@ -2,6 +2,7 @@ using INTEXII.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
+// this is a comment by Angelina
 var builder = WebApplication.CreateBuilder(args);
 
 
