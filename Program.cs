@@ -1,6 +1,7 @@
 using INTEXII.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 // this is a comment by Angelina
 var builder = WebApplication.CreateBuilder(args);
@@ -29,8 +30,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+
+//Second line(add Roles) is authenicat
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false) //was true it made it false
     .AddEntityFrameworkStores<ApplicationDbContext>();
+    //.AddRoles<IdentityRole>();
 
 builder.Services.AddControllersWithViews();
 
@@ -47,6 +51,9 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequiredUniqueChars = 1;
 });
 
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -61,6 +68,9 @@ else
     app.UseHsts();
 }
 
+
+
+
 app.UseCookiePolicy();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -69,6 +79,7 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseHttpsRedirection();
 
 app.MapControllerRoute(
     name: "default",
