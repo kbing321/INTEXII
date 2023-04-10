@@ -20,7 +20,17 @@ namespace INTEXII.Controllers
         }
 
         [Authorize]
-        public IActionResult Privacy()
+        public IActionResult Admin()
+        {
+            return View();
+        }
+
+        public IActionResult Supervised()
+        {
+            return View();
+        }
+
+        public IActionResult Unsupervised()
         {
             return View();
         }
