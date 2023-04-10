@@ -22,17 +22,22 @@ namespace INTEXII.Controllers
         [Authorize]
         public IActionResult Admin()
         {
-            return View();
+            return View("Admin");
+        }
+
+        public IActionResult About()
+        {
+            return View("About");
         }
 
         public IActionResult Supervised()
         {
-            return View();
+            return View("Supervised");
         }
 
         public IActionResult Unsupervised()
         {
-            return View();
+            return View("Unsupervised");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
