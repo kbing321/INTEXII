@@ -16,3 +16,37 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+p strong {
+    font-weight: bold;
+}
+
+p em {
+    font-style: italic;
+}
+
+p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+.my-h4 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1rem;
+    column-count: 2;
+    column-gap: 1rem;
+}
