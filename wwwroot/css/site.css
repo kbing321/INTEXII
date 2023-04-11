@@ -49,4 +49,11 @@ p a:hover {
     margin-bottom: 1rem;
     column-count: 2;
     column-gap: 1rem;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.my-h3 {
+    font-size: 1.1rem;
+    color: #333;
 }
