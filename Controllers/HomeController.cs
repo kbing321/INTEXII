@@ -39,6 +39,10 @@ namespace INTEXII.Controllers
         {
             return View("Unsupervised");
         }
+        public IActionResult Privacy()
+        {
+            return View("Privacy");
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

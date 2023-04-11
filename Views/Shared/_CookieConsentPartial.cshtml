@@ -9,15 +9,31 @@
     var cookieString = consentFeature?.CreateConsentCookie();
 }
 
+
+<style>
+    #cookieConsent {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        height: 100px; 
+    }
+</style>
+
 @if (showBanner)
 {
-
-
     <div id="cookieConsent" class="alert alert-info alert-dismissible fade show" role="alert">
-        ACCEPT THIS GDPR MY FREIND. <a asp-page="/Privacy">Learn More</a>.
-        <button type="button" class="accept-policy close" data-dismiss="alert" onclick="close" data-cookie-string="@cookieString">
-            <span aria-hidden="true">Accept</span>
+        This site uses cookies to offer you a better browsing experience. Find out more <a asp-area="" asp-controller="Home" asp-action="Privacy">HERE on our Privicy Page</a>.
+        <button type="button" class="accept-policy close" onclick="refreshWindow()" data-cookie-string="@cookieString">
+            <span aria-hidden="true">Accept Cookies</span>
         </button>
+
+        <script>
+            function refreshWindow() {
+                location.reload();
+            }
+        </script>
     </div>
     <script>
         (function () {
