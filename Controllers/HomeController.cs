@@ -20,9 +20,14 @@ namespace INTEXII.Controllers
         }
 
         [Authorize]
-        public IActionResult Admin()
+        public IActionResult DataAdmin()
         {
-            return View("Admin");
+            return View("DataAdmin");
+        }
+        [Authorize]
+        public IActionResult ManageAdmin()
+        {
+            return View("ManageAdmin");
         }
 
         public IActionResult About()
