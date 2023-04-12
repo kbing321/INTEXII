@@ -35,9 +35,9 @@ namespace INTEXII.Controllers
             return View("About");
         }
 
-        public IActionResult Supervised()
+        public IActionResult Prediction()
         {
-            return View("Supervised");
+            return View("Predict");
         }
 
         public IActionResult Unsupervised()
@@ -53,6 +53,22 @@ namespace INTEXII.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpPost]
+        public IActionResult Predict(Prediction prediction)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7088/score");
+
+                //http post
+                var postTask = client.PostAsJsonAsync<Prediction>("prediction", prediction);
+                postTask.Wait();
+
+                var result = postTask.Result;
+            }
+            return View(prediction);
         }
 
     }
