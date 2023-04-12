@@ -12,4 +12,5 @@ namespace INTEXII.Data
         }
         public DbSet<INTEXII.Models.Mummies>? Mummies { get; set; }
     }
+
 }
