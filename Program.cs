@@ -2,10 +2,13 @@ using INTEXII.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
+using INTEXII.Models;
 
 // this is a comment by Angelina
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ApplicationDbContext")));
 
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {
@@ -52,8 +55,6 @@ builder.Services.Configure<IdentityOptions>(options =>
 });
 
 
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -68,8 +69,12 @@ else
     app.UseHsts();
 }
 
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
 
-
+    SeedData.Initialize(services);
+}
 
 app.UseCookiePolicy();
 app.UseHttpsRedirection();

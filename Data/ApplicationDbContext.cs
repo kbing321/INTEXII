@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using INTEXII.Models;
 
 namespace INTEXII.Data
 {
@@ -9,5 +10,6 @@ namespace INTEXII.Data
             : base(options)
         {
         }
+        public DbSet<INTEXII.Models.Mummies>? Mummies { get; set; }
     }
 }
