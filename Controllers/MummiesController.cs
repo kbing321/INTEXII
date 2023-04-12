@@ -12,9 +12,9 @@ namespace INTEXII.Controllers
 {
     public class MummiesController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly RDSContext _context;
 
-        public MummiesController(ApplicationDbContext context)
+        public MummiesController(RDSContext context)
         {
             _context = context;
         }
@@ -24,7 +24,7 @@ namespace INTEXII.Controllers
         {
               return _context.Mummies != null ? 
                           View(await _context.Mummies.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Mummies'  is null.");
+                          Problem("Entity set 'RDSContext.Mummies'  is null.");
         }
 
         // GET: Mummies/Details/5
@@ -143,7 +143,7 @@ namespace INTEXII.Controllers
         {
             if (_context.Mummies == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.Mummies'  is null.");
+                return Problem("Entity set 'RDSContext.Mummies'  is null.");
             }
             var mummies = await _context.Mummies.FindAsync(id);
             if (mummies != null)
