@@ -3,12 +3,14 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
 using INTEXII.Models;
+using Npgsql;
 
 // this is a comment by Angelina
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<RDSContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("RDSContext")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("RDSContext")));
+
 
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {
@@ -30,7 +32,7 @@ builder.Services.AddHsts(options =>
     options.ExcludedHosts.Add("www.example.com");
 });
 builder.Services.AddDbContext<RDSContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseNpgsql(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 
