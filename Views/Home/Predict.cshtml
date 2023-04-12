@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "Predict";
+}
+@model Prediction
+
+<div class="text-center">
+    <h1 class="display-4">Fag el-Gamous</h1>
+    <h3>Predict the Mummy Wrapping</h3>
+</div>
+
+<form method="post" asp-controller="Home" asp-action="Predict">
+    <div class="form-group">
+        <label asp-for="squarenorthsouth">Square NorthSouth</label>
+        <input asp-for="squarenorthsouth" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="depth">Depth</label>
+        <input asp-for="depth" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="southtohead">South to Head</label>
+        <input asp-for="southtohead" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="squareeastwest">Square EastWest</label>
+        <input asp-for="squareeastwest" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="westtohead">West to Head</label>
+        <input asp-for="westtohead" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="burialnumber">Burial Number</label>
+        <input asp-for="burialnumber" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="westtofeet">West to Feet</label>
+        <input asp-for="westtofeet" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="southtofeet">South to Feet</label>
+        <input asp-for="southtofeet" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="northsouth_N">northsouth_N</label>
+        <input asp-for="northsouth_N" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="eastwest_E">eastwest_E</label>
+        <input asp-for="eastwest_E" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="eastwest_W">eastwest_W</label>
+        <input asp-for="eastwest_W" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="adultsubadult_A">adultsubadult_A</label>
+        <input asp-for="adultsubadult_A" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="adultsubadult_C">adultsubadult_C</label>
+        <input asp-for="adultsubadult_C" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="samplescollected_false">samplescollected_false</label>
+        <input asp-for="samplescollected_false" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="samplescollected_true">samplescollected_true</label>
+        <input asp-for="samplescollected_true" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="samplescollected_unknown">samplescollected_unknown</label>
+        <input asp-for="samplescollected_unknown" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="area_NE">area_NE</label>
+        <input asp-for="area_NE" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="area_NW">area_NW</label>
+        <input asp-for="area_NW" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="area_SE">area_SE</label>
+        <input asp-for="area_SE" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="area_SW">area_SW</label>
+        <input asp-for="area_SW" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ageatdeath_A">ageatdeath_A</label>
+        <input asp-for="ageatdeath_A" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ageatdeath_C">ageatdeath_C</label>
+        <input asp-for="ageatdeath_C" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ageatdeath_I">ageatdeath_I</label>
+        <input asp-for="ageatdeath_I" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ageatdeath_N">ageatdeath_N</label>
+        <input asp-for="ageatdeath_N" class="form-control" />
+    </div>
+    <div class="float-right">
+        <input class="btn btn-primary" type="submit" value="Predict"/>
+    </div>
+</form>
