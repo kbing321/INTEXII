@@ -23,6 +23,7 @@ namespace INTEXII.Controllers
             _connectionString = configuration.GetConnectionString("ApplicationDbContext");
         }
 
+        [Authorize]
         public IActionResult DataAdmin()
         {
             //var userRepository = new UserRepository(_connectionString);
@@ -40,7 +41,7 @@ namespace INTEXII.Controllers
             return View();
         }
 
-        [Authorize]
+        //[Authorize]
         //public IActionResult DataAdmin()
         //{
         //    return View("DataAdmin");
@@ -88,6 +89,7 @@ namespace INTEXII.Controllers
         //    // Redirect the user back to the page where they can view the updated user information
         //    return RedirectToAction("ViewUser", new { userId });
         //}
+        [Authorize]
         [HttpPost]
         public IActionResult EditUser(string userId, string email)
         {
@@ -96,12 +98,13 @@ namespace INTEXII.Controllers
 
             return RedirectToAction("Index");
         }
-
+        [Authorize]
         [HttpPost]
-        public IActionResult DeleteUser(int userId)
+        public IActionResult DeleteUser(string userId)
         {
             var userRepository = new UserRepository(_connectionString);
-            userRepository.DeleteUser(userId);
+            userRepository.DeleteUserByEmail(userId);
+            //userRepository.UpdateUserEmail(userId, email);
 
             return RedirectToAction("DataAdmin");
         }

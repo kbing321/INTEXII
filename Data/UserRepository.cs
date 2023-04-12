@@ -1,5 +1,6 @@
 ﻿using INTEXII.Models;
 using Microsoft.Data.SqlClient;
+using System.Data.SqlClient;
 
 namespace INTEXII.Data
 {
@@ -89,13 +90,15 @@ namespace INTEXII.Data
             }
         }
 
-        public void DeleteUser(int userId)
+        public void DeleteUserByEmail(string userId)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
 
+                //var query = "UPDATE dbo.AspNetUsers SET UserName = @NewUser WHERE Id = @UserId";
                 var query = "DELETE FROM dbo.AspNetUsers WHERE Id = @UserId";
+
 
                 using (var command = new SqlCommand(query, connection))
                 {
@@ -103,9 +106,7 @@ namespace INTEXII.Data
                     command.ExecuteNonQuery();
                 }
             }
+            }
+            }
+
         }
-
-
-    }
-
-}
