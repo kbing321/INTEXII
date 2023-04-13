@@ -1,0 +1,150 @@
+﻿@model IEnumerable<INTEXII.Models.finalburialrecords2>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.colorvalue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.structurevalue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstimateStature)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.depth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ageatdeath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.headdirection)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.burialid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.textilefunctionvalue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HairColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.facebundles)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.filename)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.southtohead)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.westtohead)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.southtofeet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.westtofeet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.length)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observations)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idid)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.colorvalue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.structurevalue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EstimateStature)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.depth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ageatdeath)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.headdirection)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.burialid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.textilefunctionvalue)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.HairColor)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.facebundles)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.Notes)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.filename)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.southtohead)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.westtohead)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.southtofeet)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.westtofeet)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.length)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.Observations)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.idid)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
