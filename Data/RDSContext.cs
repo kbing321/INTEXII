@@ -16,5 +16,8 @@ namespace INTEXII.Data
         public virtual DbSet<IdentityUser> Users { get; set; }
 
         public virtual DbSet<IdentityUserClaim<string>> UserClaims { get; set; }
+
+        // public virtual DbSet<finalburialrecords2> finalburialrecords2 { get; set; }
+
     }
 }
