@@ -8,8 +8,9 @@ using Microsoft.ML.OnnxRuntime;
 // this is a comment by Angelina
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ApplicationDbContext")));
+builder.Services.AddDbContext<RDSContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("RDSContext")));
+
 
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {
@@ -21,7 +22,7 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
 });
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionString = builder.Configuration.GetConnectionString("RDSContext");
 builder.Services.AddHsts(options =>
 {
     options.Preload = true;
@@ -30,14 +31,14 @@ builder.Services.AddHsts(options =>
     options.ExcludedHosts.Add("example.com");
     options.ExcludedHosts.Add("www.example.com");
 });
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<RDSContext>(options =>
+    options.UseNpgsql(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 
 //Second line(add Roles) is authenicat
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false) //was true it made it false
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+    .AddEntityFrameworkStores<RDSContext>();
     //.AddRoles<IdentityRole>();
 
 builder.Services.AddControllersWithViews();

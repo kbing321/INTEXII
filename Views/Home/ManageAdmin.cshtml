@@ -1,6 +1,81 @@
 ﻿@{
-    ViewData["Title"] = "ManageAdmin";
+    ViewData["Title"] = "Manage Admin";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Manage</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@ViewData["Title"]</title>
+    <style>
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        form {
+            display: inline-block;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="email"] {
+            width: 200%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>@ViewData["Title"]</h1>
+
+    <ul>
+        @foreach (var user in Model)
+        {
+            <li>@user.Email</li>
+            <form method="post" asp-action="EditUser">
+                <input type="hidden" name="userId" value="@user.Id" />
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="@user.Email" required />
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </form>
+
+            <form method="post" asp-action="DeleteUser">
+                <input type="hidden" name="userId" value="@user.Id" />
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        }
+    </ul>
+</body>
+</html>

@@ -11,9 +11,9 @@ namespace INTEXII.Models
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new ApplicationDbContext(
+            using (var context = new RDSContext(
                 serviceProvider.GetRequiredService<
-                    DbContextOptions<ApplicationDbContext>>()))
+                    DbContextOptions<RDSContext>>()))
             {
                 // Look for any movies.
                 //if (context.Mummies.Any())

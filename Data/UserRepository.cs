@@ -1,5 +1,5 @@
 ﻿using INTEXII.Models;
-using Microsoft.Data.SqlClient;
+using Npgsql;
 using System.Data.SqlClient;
 
 namespace INTEXII.Data
@@ -13,45 +13,17 @@ namespace INTEXII.Data
             _connectionString = connectionString;
         }
 
-        //public List<string> GetAllUsernames()
-        //{
-        //    var usernames = new List<string>();
-
-        //    using (var connection = new SqlConnection(_connectionString))
-        //    {
-        //        connection.Open();
-
-        //        var query = "SELECT * FROM dbo.AspNetUsers";
-
-        //        using (var command = new SqlCommand(query, connection))
-        //        {
-        //            using (var reader = command.ExecuteReader())
-        //            {
-        //                while (reader.Read())
-        //                {
-        //                    var id = reader.GetString(0);
-        //                    var username = reader.GetString(1);
-        //                    usernames.Add(id);
-        //                    usernames.Add(username);
-        //                }
-        //            }
-        //        }
-
-        //    }
-        //    return usernames;
-        //}
-
         public List<UserViewModel> GetAllUsers()
         {
             var users = new List<UserViewModel>();
 
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new NpgsqlConnection(_connectionString))
             {
                 connection.Open();
 
-                var query = "SELECT Id, UserName FROM dbo.AspNetUsers";
+                var query = "SELECT Id, UserName FROM public.AspNetUsers";
 
-                using (var command = new SqlCommand(query, connection))
+                using (var command = new NpgsqlCommand(query, connection))
                 {
                     using (var reader = command.ExecuteReader())
                     {
@@ -73,15 +45,13 @@ namespace INTEXII.Data
 
         public void UpdateUserEmail(string userId, string newUser)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new NpgsqlConnection(_connectionString))
             {
                 connection.Open();
 
-                //var query = "UPDATE dbo.AspNetUsers SET UserName = @NewUser WHERE Id = @UserId";
-                var query = "UPDATE dbo.AspNetUsers SET UserName = @NewUser, NormalizedUserName = @NewUser, Email = @NewUser, NormalizedEmail = @NewUser WHERE Id = @UserId";
+                var query = "UPDATE public.AspNetUsers SET UserName = @NewUser, NormalizedUserName = @NewUser, Email = @NewUser, NormalizedEmail = @NewUser WHERE Id = @UserId";
 
-
-                using (var command = new SqlCommand(query, connection))
+                using (var command = new NpgsqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@NewUser", newUser);
                     command.Parameters.AddWithValue("@UserId", userId);
@@ -92,21 +62,18 @@ namespace INTEXII.Data
 
         public void DeleteUserByEmail(string userId)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new NpgsqlConnection(_connectionString))
             {
                 connection.Open();
 
-                //var query = "UPDATE dbo.AspNetUsers SET UserName = @NewUser WHERE Id = @UserId";
-                var query = "DELETE FROM dbo.AspNetUsers WHERE Id = @UserId";
+                var query = "DELETE FROM public.AspNetUsers WHERE Id = @UserId";
 
-
-                using (var command = new SqlCommand(query, connection))
+                using (var command = new NpgsqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@UserId", userId);
                     command.ExecuteNonQuery();
                 }
             }
-            }
-            }
-
         }
+    }
+}

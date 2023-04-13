@@ -15,7 +15,7 @@ namespace INTEXII.Controllers
         //{
         //    _logger = logger;
         //}
-        private readonly ApplicationDbContext _dbContext;
+        private readonly RDSContext _dbContext;
         private readonly string _connectionString;
 
         public HomeController(IConfiguration configuration)
@@ -24,7 +24,7 @@ namespace INTEXII.Controllers
         }
 
         [Authorize]
-        public IActionResult DataAdmin()
+        public IActionResult ManageAdmin()
         {
             //var userRepository = new UserRepository(_connectionString);
             //var usernames = userRepository.GetAllUsernames();
@@ -47,9 +47,9 @@ namespace INTEXII.Controllers
         //    return View("DataAdmin");
         //}
         [Authorize]
-        public IActionResult ManageAdmin()
+        public IActionResult DataAdmin()
         {
-            return View("ManageAdmin");
+            return View("DataAdmin");
         }
 
         public IActionResult About()
@@ -106,7 +106,7 @@ namespace INTEXII.Controllers
             userRepository.DeleteUserByEmail(userId);
             //userRepository.UpdateUserEmail(userId, email);
 
-            return RedirectToAction("DataAdmin");
+            return RedirectToAction("ManageAdmin");
         }
 
         [HttpGet]
