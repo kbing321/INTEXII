@@ -22,19 +22,31 @@
         width: 100%;
         transition: 0.2s;
     }
-
     footer {
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
+        /*background-color: #333;*/
+        color: black;
+        padding: 10px;
         margin-top: auto;
-
-
+    }
+    .banner_img {
+        height: 85px;
+        width: 150px;
+        box-shadow: none;
+        border: none;
+    }
+    .bground_color{
+        background-color: #df9b23;
     }
 </style>
 <header>
-    <div id="header">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div id="header" class="bground_color">
+        <div class="row bg-white">
+            <img class="banner_img float-left" src="~/img/IMG-0103.jpg" alt="Byu in Egypt Logo" />
+            <div class="col align-self-center text-start">
+                <h1>BYU Egypt Excavation Project</h1>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-transparent">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +60,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Prediction">Supervised Data</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Prediction">Predict State of Wrapping</a>
                                 <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Unsupervised">Unsupervised Data</a>
                             </div>
                         </li>
@@ -67,7 +79,7 @@
     </div>
 </header>
 <body>
-    <div class="container" style="margin-top:75px;">
+    <div class="container" style="margin-top:150px;">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()
@@ -75,7 +87,7 @@
     </div>
 </body>
     <footer>
-        <div id="footer" class="container">
+        <div id="footer" class="container text-center bg-transparent">
             &copy; 2023 - INTEXII - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
