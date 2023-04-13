@@ -15,7 +15,7 @@ namespace INTEXII.Controllers
         //{
         //    _logger = logger;
         //}
-        private readonly RDSContext _dbContext;
+        //private readonly RDSContext _dbContext;
         private readonly string _connectionString;
 
         public HomeController(IConfiguration configuration)
