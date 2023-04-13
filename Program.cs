@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Net;
 using INTEXII.Models;
 using Microsoft.ML.OnnxRuntime;
+using Npgsql;
 
 // this is a comment by Angelina
 var builder = WebApplication.CreateBuilder(args);
