@@ -109,9 +109,14 @@ namespace INTEXII.Controllers
             return RedirectToAction("ManageAdmin");
         }
 
+        [HttpGet]
+        public IActionResult ValueOutput(PredictionResponse resp)
+        {
+            var prediction = resp;
+            return View(prediction);
+        }
 
-
-        [HttpPost]
+        /*[HttpPost]
         public IActionResult Predict(Prediction prediction)
         {
             using (var client = new HttpClient())
@@ -123,10 +128,13 @@ namespace INTEXII.Controllers
                 postTask.Wait();
 
                 var result = postTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index");
+                }
             }
             return View(prediction);
-        }
-
+        }*/
     }
 
 }

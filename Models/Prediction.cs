@@ -1,4 +1,6 @@
-﻿namespace INTEXII.Models
+﻿using Microsoft.ML.OnnxRuntime.Tensors;
+
+namespace INTEXII.Models
 {
     public class Prediction
     {
@@ -26,6 +28,18 @@
         public int ageatdeath_C { get; set; }
         public int ageatdeath_I { get; set; }
         public int ageatdeath_N { get; set; }
+
+        public Tensor<float> AsTensor()
+        {
+            float[] data = new float[]
+            {
+                squarenorthsouth, depth, southtohead, squareeastwest, westtohead, burialnumber, westtofeet, southtofeet, northsouth_N, eastwest_E,
+                eastwest_W, adultsubadult_A, adultsubadult_C, samplescollected_false, samplescollected_true, samplescollected_unknown, area_NE,
+                area_NW, area_SE, area_SW, ageatdeath_A, ageatdeath_C, ageatdeath_I, ageatdeath_N
+            };
+            int[] dimensions = new int[] { 1, 24 };
+            return new DenseTensor<float>(data, dimensions);
+        }
     }
 
 }

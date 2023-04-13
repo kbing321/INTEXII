@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
 using INTEXII.Models;
+using Microsoft.ML.OnnxRuntime;
 using Npgsql;
 
 // this is a comment by Angelina
@@ -42,6 +43,10 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     //.AddRoles<IdentityRole>();
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpClient();
+builder.Services.AddSingleton<InferenceSession>(
+    new InferenceSession("supervisedmodel (3).onnx")
+);
 
 
 
