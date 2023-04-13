@@ -31,7 +31,7 @@
     }
     .banner_img {
         height: 85px;
-        width: 150px;
+        width: 130px;
         box-shadow: none;
         border: none;
     }
@@ -42,8 +42,12 @@
 <header>
     <div id="header" class="bground_color">
         <div class="row bg-white">
-            <img class="banner_img float-left" src="~/img/IMG-0103.jpg" alt="Byu in Egypt Logo" />
-            <div class="col align-self-center text-start">
+            <div class="col-2">
+                <a class="float-left" asp-controller="Home" asp-action="Index">
+                    <img class="banner_img float-left" src="~/img/IMG-0103.jpg" alt="Byu in Egypt Logo" />
+                </a>
+            </div>
+            <div class="col-10 align-self-center text-start">
                 <h1>BYU Egypt Excavation Project</h1>
             </div>
         </div>
