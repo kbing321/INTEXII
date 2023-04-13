@@ -11,7 +11,7 @@
     "INTEXII": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:38772",
+      "applicationUrl": "https://localhost:4000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

@@ -9,13 +9,13 @@ namespace INTEXII.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly ILogger<HomeController> _logger;
+        //private readonly ilogger<homecontroller> _logger;
 
-        //public HomeController(ILogger<HomeController> logger)
+        //public homecontroller(ilogger<homecontroller> logger)
         //{
         //    _logger = logger;
         //}
-        //private readonly RDSContext _dbContext;
+        //private readonly rdscontext _dbcontext;
         private readonly string _connectionString;
 
         public HomeController(IConfiguration configuration)

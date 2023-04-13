@@ -13,7 +13,8 @@ namespace INTEXII.Data
 
         public virtual DbSet<Mummies> Mummies { get; set; }
 
-        public virtual DbSet<IdentityUser> Users { get; set; }
+        public virtual DbSet<IdentityUser> IUsers { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
 
         public virtual DbSet<IdentityUserClaim<string>> UserClaims { get; set; }
 
