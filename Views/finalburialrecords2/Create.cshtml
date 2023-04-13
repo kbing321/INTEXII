@@ -4,10 +4,6 @@
     ViewData["Title"] = "Create";
 }
 
-<div class="float-left">
-    <a asp-action="Index">Back to List</a>
-</div>
-
 <h1>Create</h1>
 
 <h4>Burial Data</h4>
@@ -29,12 +25,23 @@
             <h4><u>Mummy Information:</u></h4>
             <div class="form-group">
                 <label asp-for="sex" class="control-label">Sex</label>
-                <input asp-for="sex" class="form-control" />
+                <select asp-for="sex" class="form-control">
+                    <option value="F">F</option>
+                    <option value="M">M</option>
+                    <option value="U">U</option>
+                </select>
                 <span asp-validation-for="sex" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ageatdeath" class="control-label">Age at Death</label>
-                <input asp-for="ageatdeath" class="form-control" />
+                <select asp-for="ageatdeath" class="form-control">
+                    <option value="A">A</option>
+                    <option value="C">C</option>
+                    <option value="I">I</option>
+                    <option value="N">N</option>
+                    <option value="U">U</option>
+                </select>
+
                 <span asp-validation-for="ageatdeath" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -44,7 +51,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="headdirection" class="control-label">Head Direction</label>
-                <input asp-for="headdirection" class="form-control" />
+                <select asp-for="headdirection" class="form-control">
+                    <option value="E">E</option>
+                    <option value="W">W</option>
+                </select>
                 <span asp-validation-for="headdirection" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -54,7 +64,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="facebundles" class="control-label">Face Bundles</label>
-                <input asp-for="facebundles" class="form-control" />
+                <select asp-for="facebundles" class="form-control">
+                    <option value="Y">Y</option>
+                    <option value="N">N</option>
+                </select>
                 <span asp-validation-for="facebundles" class="text-danger"></span>
             </div>
             <h4><u>Textile Information:</u></h4>
@@ -73,7 +86,7 @@
                 <input asp-for="textilefunctionvalue" class="form-control" />
                 <span asp-validation-for="textilefunctionvalue" class="text-danger"></span>
             </div>
-            <h4><u>Location Information:</u></h4>
+            <h4><u>Measurements:</u></h4>
             <div class="form-group">
                 <label asp-for="depth" class="control-label">Burial Depth</label>
                 <input asp-for="depth" class="form-control" />
@@ -117,6 +130,7 @@
             </div><br />
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
+                <a class="btn btn-outline-dark" asp-action="Index">Back</a>
             </div>
         </form>
     </div>

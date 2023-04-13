@@ -4,10 +4,6 @@
     ViewData["Title"] = "Edit";
 }
 
-<div class="float-left">
-    <a asp-action="Index">Back to List</a>
-</div>
-
 <h1>Edit</h1>
 
 <h4>Mummies</h4>
@@ -17,6 +13,60 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="burialid" class="control-label">Burial ID</label>
+                <input asp-for="burialid" class="form-control" />
+                <span asp-validation-for="burialid" class="text-danger"></span>
+            </div>
+            <h4><u>Mummy Information:</u></h4>
+            <div class="form-group">
+                <label asp-for="sex" class="control-label">Sex</label>
+                <select asp-for="sex" class="form-control">
+                    <option value="F">F</option>
+                    <option value="M">M</option>
+                    <option value="U">U</option>
+                </select>
+                <span asp-validation-for="sex" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ageatdeath" class="control-label">Age at Death</label>
+                <select asp-for="ageatdeath" class="form-control">
+                    <option value="A">A</option>
+                    <option value="C">C</option>
+                    <option value="I">I</option>
+                    <option value="N">N</option>
+                    <option value="U">U</option>
+                </select>
+
+                <span asp-validation-for="ageatdeath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="length" class="control-label">Body Length</label>
+                <input asp-for="length" class="form-control" />
+                <span asp-validation-for="length" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="headdirection" class="control-label">Head Direction</label>
+                <select asp-for="headdirection" class="form-control">
+                    <option value="E">E</option>
+                    <option value="W">W</option>
+                </select>
+                <span asp-validation-for="headdirection" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HairColor" class="control-label">Hair Color</label>
+                <input asp-for="HairColor" class="form-control" />
+                <span asp-validation-for="HairColor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="facebundles" class="control-label">Face Bundles</label>
+                <select asp-for="facebundles" class="form-control">
+                    <option value="Y">Y</option>
+                    <option value="N">N</option>
+                </select>
+                <span asp-validation-for="facebundles" class="text-danger"></span>
+            </div>
+            <h4><u>Textile Information:</u></h4>
             <div class="form-group">
                 <label asp-for="colorvalue" class="control-label">Textile Color</label>
                 <input asp-for="colorvalue" class="form-control" />
@@ -28,54 +78,15 @@
                 <span asp-validation-for="structurevalue" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="sex" class="control-label">Sex</label>
-                <input asp-for="sex" class="form-control" />
-                <span asp-validation-for="sex" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="depth" class="control-label">Burial Depth</label>
-                <input asp-for="depth" class="form-control" />
-                <span asp-validation-for="depth" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ageatdeath" class="control-label">Age at Death</label>
-                <input asp-for="ageatdeath" class="form-control" />
-                <span asp-validation-for="ageatdeath" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="headdirection" class="control-label">Head Direction</label>
-                <input asp-for="headdirection" class="form-control" />
-                <span asp-validation-for="headdirection" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="burialid" class="control-label">Burial ID</label>
-                <input asp-for="burialid" class="form-control" />
-                <span asp-validation-for="burialid" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="textilefunctionvalue" class="control-label">Textile Function</label>
                 <input asp-for="textilefunctionvalue" class="form-control" />
                 <span asp-validation-for="textilefunctionvalue" class="text-danger"></span>
             </div>
+            <h4><u>Measurements:</u></h4>
             <div class="form-group">
-                <label asp-for="HairColor" class="control-label">Hair Color</label>
-                <input asp-for="HairColor" class="form-control" />
-                <span asp-validation-for="HairColor" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="facebundles" class="control-label">Face Bundles</label>
-                <input asp-for="facebundles" class="form-control" />
-                <span asp-validation-for="facebundles" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Notes" class="control-label">Notes</label>
-                <input asp-for="Notes" class="form-control" />
-                <span asp-validation-for="Notes" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="filename" class="control-label">Image</label>
-                <input asp-for="filename" class="form-control" />
-                <span asp-validation-for="filename" class="text-danger"></span>
+                <label asp-for="depth" class="control-label">Burial Depth</label>
+                <input asp-for="depth" class="form-control" />
+                <span asp-validation-for="depth" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="southtohead" class="control-label">South to Head</label>
@@ -97,18 +108,25 @@
                 <input asp-for="westtofeet" class="form-control" />
                 <span asp-validation-for="westtofeet" class="text-danger"></span>
             </div>
+            <h4><u>Image/Observations/Notes:</u></h4>
             <div class="form-group">
-                <label asp-for="length" class="control-label">Body Length</label>
-                <input asp-for="length" class="form-control" />
-                <span asp-validation-for="length" class="text-danger"></span>
+                <label asp-for="filename" class="control-label">Image File Name</label>
+                <input asp-for="filename" class="form-control" />
+                <span asp-validation-for="filename" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Observations" class="control-label">Observations</label>
                 <input asp-for="Observations" class="form-control" />
                 <span asp-validation-for="Observations" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label">Notes</label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
             </div><br />
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Update" class="btn btn-primary" />
+                <a class="btn btn-outline-dark" asp-action="Index">Back</a>
             </div>
         </form>
     </div>

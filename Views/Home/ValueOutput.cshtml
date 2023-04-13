@@ -3,28 +3,28 @@
 <alert class="container-fluid" style="height:max-content">
     <div class="row">
         <div class="col-3">
-            <form>
-                <input type="button" value="Back" onclick="history.back()"/>
-            </form>
+            <a class="btn btn-outline-dark" value="Back" onclick="history.back()">Back</a><br /><br />
         </div>
         <div class="row text-center">
             <h1>Based on the given data, the predicted state of the burial wrapping is:</h1>
-            <h3>Burial Wrapping Code: @Model.PredictedWrap</h3>
+        </div><br /><br /><br /><br />
+        <div class="row text-center">
+            <h2><u>Burial Wrapping Code: @Model.PredictedWrap</u></h2>
             @if (Model.PredictedWrap == "W")
             {
-                <h2>The wrapping will FULLY COVER the mummy</h2>
+                <h3>The wrapping will FULLY COVER the mummy</h3>
             }
             @if (Model.PredictedWrap == "H")
             {
-                <h2>The wrapping will PARTIALLY COVER the mummy</h2>
+                <h3>The wrapping will PARTIALLY COVER the mummy</h3>
             }
             @if (Model.PredictedWrap == "B")
             {
-                <h2>The BONES of the mummy will be showing, with only few fragments of wrapping left</h2>
+                <h3>The BONES of the mummy will be showing, with only few fragments of wrapping left</h3>
             }
             @if (Model.PredictedWrap == "U")
             {
-                <h2>The wrapping state is UNKNOWN</h2>
+                <h3>The wrapping state is UNKNOWN</h3>
             }
         </div>
     </div>
