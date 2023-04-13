@@ -1,0 +1,138 @@
+﻿@model INTEXII.Models.finalburialrecords2
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Mummies</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.colorvalue)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.colorvalue)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.structurevalue)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.structurevalue)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.sex)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.sex)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EstimateStature)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EstimateStature)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.depth)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.depth)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ageatdeath)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ageatdeath)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.headdirection)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.headdirection)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.burialid)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.burialid)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.textilefunctionvalue)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.textilefunctionvalue)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HairColor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HairColor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.facebundles)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.facebundles)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.filename)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.filename)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.southtohead)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.southtohead)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.westtohead)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.westtohead)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.southtofeet)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.southtofeet)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.westtofeet)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.westtofeet)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.length)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.length)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Observations)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Observations)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.idid)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.idid)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
