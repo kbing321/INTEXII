@@ -9,62 +9,41 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-bordered">
+    <thead class="table-light">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.colorvalue)
+                Burial ID
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.structurevalue)
+                Textile Color
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.sex)
+                Textile Structure
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.depth)
+                Sex
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ageatdeath)
+                Burial Depth
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.headdirection)
+                Age at Death
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.burialid)
+                Head Direction
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.textilefunctionvalue)
+                Textile Function
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.HairColor)
+                Hair Color
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.facebundles)
+                Face Bundles
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Notes)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.filename)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.southtohead)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.westtohead)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.southtofeet)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.westtofeet)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.length)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Observations)
+                Image
             </th>
             <th></th>
         </tr>
@@ -73,6 +52,9 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.burialid)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.colorvalue)
                 </td>
@@ -92,9 +74,6 @@
                     @Html.DisplayFor(modelItem => item.headdirection)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.burialid)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.textilefunctionvalue)
                 </td>
                 <td>
@@ -104,28 +83,7 @@
                     @Html.DisplayFor(modelItem => item.facebundles)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Notes)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.filename)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.southtohead)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.westtohead)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.southtofeet)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.westtofeet)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.length)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Observations)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
