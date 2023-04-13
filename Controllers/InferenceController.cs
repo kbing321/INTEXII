@@ -2,7 +2,7 @@
 using System.Linq;
 using INTEXII.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient.Server;
+//using Microsoft.Data.SqlClient.Server;
 using Microsoft.ML.OnnxRuntime;
 using Microsoft.ML.OnnxRuntime.Tensors;
 
