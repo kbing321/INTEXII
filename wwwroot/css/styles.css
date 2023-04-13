@@ -1,0 +1,31 @@
+﻿body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    transition: 0.2s;
+}
+
+footer {
+    /*background-color: #333;*/
+    color: black;
+    padding: 10px;
+    margin-top: auto;
+}
+
+.banner_img {
+    height: 85px;
+    width: 150px;
+    box-shadow: none;
+    border: none;
+}
+
+.bground_color {
+    background-color: #df9b23;
+}

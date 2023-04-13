@@ -7,70 +7,43 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+</p><br />
+<table class="table table-bordered">
+    <thead class="table-light">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.colorvalue)
+                Burial ID
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.structurevalue)
+                Sex
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.sex)
+                Age at Death
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EstimateStature)
+                Head Direction
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.depth)
+                Hair Color
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ageatdeath)
+                Face Bundles
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.headdirection)
+                Textile Color
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.burialid)
+                Textile Structure
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.textilefunctionvalue)
+                Textile Function
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.HairColor)
+                Burial Depth
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.facebundles)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Notes)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.filename)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.southtohead)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.westtohead)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.southtofeet)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.westtofeet)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.length)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Observations)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.idid)
+                Image
             </th>
             <th></th>
         </tr>
@@ -80,19 +53,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.colorvalue)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.structurevalue)
+                    @Html.DisplayFor(modelItem => item.burialid)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.sex)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EstimateStature)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.depth)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ageatdeath)
@@ -101,43 +65,25 @@
                     @Html.DisplayFor(modelItem => item.headdirection)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.burialid)
+                    @Html.DisplayFor(modelItem => item.HairColor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.facebundles)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.colorvalue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.structurevalue)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.textilefunctionvalue)
                 </td>
                 <td>
-                    @Html.DisplayNameFor(model => model.HairColor)
+                    @Html.DisplayFor(modelItem => item.depth)
                 </td>
                 <td>
-                    @Html.DisplayNameFor(model => model.facebundles)
-                </td>
-                <td>
-                    @Html.DisplayNameFor(model => model.Notes)
-                </td>
-                <td>
-                    @Html.DisplayNameFor(model => model.filename)
-                </td>
-                <td>
-                    @Html.DisplayNameFor(model => model.southtohead)
-                </td>
-                <td>
-                    @Html.DisplayNameFor(model => model.westtohead)
-                </td>
-                <td>
-                    @Html.DisplayNameFor(model => model.southtofeet)
-                </td>
-                <td>
-                    @Html.DisplayNameFor(model => model.westtofeet)
-                </td>
-                <td>
-                    @Html.DisplayNameFor(model => model.length)
-                </td>
-                <td>
-                    @Html.DisplayNameFor(model => model.Observations)
-                </td>
-                <td>
-                    @Html.DisplayNameFor(model => model.idid)
+                    @Html.DisplayFor(modelItem => item.filename)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |

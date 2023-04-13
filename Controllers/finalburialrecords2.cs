@@ -57,7 +57,7 @@ namespace INTEXII.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,colorvalue, structurevalue, sex, EstimateStature, depth, ageatdeath, headdirection, burialid, textilefunctionvalue, HairColor, facebundles, Notes, filename, southtohead, westtohead, southtofeet, westtofeet, length, Observations, idid")] finalburialrecords2 burialdata)
+        public async Task<IActionResult> Create([Bind("id,colorvalue, structurevalue, sex, depth, ageatdeath, headdirection, burialid, textilefunctionvalue, HairColor, facebundles, Notes, filename, southtohead, westtohead, southtofeet, westtofeet, length, Observations")] finalburialrecords2 burialdata)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace INTEXII.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Int64 id, [Bind("id,colorvalue, structurevalue, sex, EstimateStature, depth, ageatdeath, headdirection, burialid, textilefunctionvalue, HairColor, facebundles, Notes, filename, southtohead, westtohead, southtofeet, westtofeet, length, Observations, idid")] finalburialrecords2 burialdata)
+        public async Task<IActionResult> Edit(Int64 id, [Bind("id,colorvalue, structurevalue, sex, depth, ageatdeath, headdirection, burialid, textilefunctionvalue, HairColor, facebundles, Notes, filename, southtohead, westtohead, southtofeet, westtofeet, length, Observations")] finalburialrecords2 burialdata)
         {
             if (id != burialdata.id)
             {
