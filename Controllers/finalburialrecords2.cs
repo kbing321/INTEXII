@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using INTEXII.Data;
 using INTEXII.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace INTEXII.Controllers
 {
@@ -19,6 +20,7 @@ namespace INTEXII.Controllers
             _context = context;
         }
 
+        [Authorize]
         // GET: Mummies
         public async Task<IActionResult> Index()
         {
