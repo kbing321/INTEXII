@@ -22,20 +22,20 @@
             <div class="form-group">
                 <label asp-for="sex" class="control-label">Sex</label>
                 <select asp-for="sex" class="form-control">
-                    <option value="F">F</option>
-                    <option value="M">M</option>
-                    <option value="U">U</option>
+                    <option value="F">Female</option>
+                    <option value="M">Male</option>
+                    <option value="U">Unknown</option>
                 </select>
                 <span asp-validation-for="sex" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ageatdeath" class="control-label">Age at Death</label>
                 <select asp-for="ageatdeath" class="form-control">
-                    <option value="A">A</option>
-                    <option value="C">C</option>
-                    <option value="I">I</option>
-                    <option value="N">N</option>
-                    <option value="U">U</option>
+                    <option value="A">Adult</option>
+                    <option value="C">Child</option>
+                    <option value="I">Infant</option>
+                    <option value="N">Newborn</option>
+                    <option value="U">Unknown</option>
                 </select>
 
                 <span asp-validation-for="ageatdeath" class="text-danger"></span>
@@ -48,8 +48,8 @@
             <div class="form-group">
                 <label asp-for="headdirection" class="control-label">Head Direction</label>
                 <select asp-for="headdirection" class="form-control">
-                    <option value="E">E</option>
-                    <option value="W">W</option>
+                    <option value="E">East</option>
+                    <option value="W">West</option>
                 </select>
                 <span asp-validation-for="headdirection" class="text-danger"></span>
             </div>
@@ -61,8 +61,8 @@
             <div class="form-group">
                 <label asp-for="facebundles" class="control-label">Face Bundles</label>
                 <select asp-for="facebundles" class="form-control">
-                    <option value="Y">Y</option>
-                    <option value="N">N</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
                 </select>
                 <span asp-validation-for="facebundles" class="text-danger"></span>
             </div>

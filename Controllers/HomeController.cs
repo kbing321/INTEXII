@@ -56,10 +56,6 @@ namespace INTEXII.Controllers
         {
             return View("About");
         }
-        public IActionResult UnauthenticatedBurial()
-        {
-            return View("UnauthenticatedData");
-        }
 
         public IActionResult Prediction()
         {

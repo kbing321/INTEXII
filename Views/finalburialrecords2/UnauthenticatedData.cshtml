@@ -7,9 +7,8 @@
 <h1>Index</h1>
 
 <p>
-    <a class="btn btn-primary" asp-action="Create">Create New</a>
-    <a class="btn btn-primary" asp-action="Filter">Filter</a>
-    <a class="btn btn-primary" asp-action="ClearFilters">Clear Filter</a>
+    <a class="btn btn-primary" asp-action="UnauthFilter">Filter</a>
+    <a class="btn btn-primary" asp-action="UnauthClearFilters">Clear Filter</a>
 </p><br />
 <table class="table table-bordered">
     <thead class="table-light">
@@ -50,43 +49,41 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
+                <tr>
+                    <td>
                     @Html.DisplayFor(modelItem => item.burialid)
-                </td>
-                <td>
+                    </td>
+                    <td>
                     @Html.DisplayFor(modelItem => item.sex)
-                </td>
-                <td>
+                    </td>
+                    <td>
                     @Html.DisplayFor(modelItem => item.ageatdeath)
-                </td>
-                <td>
+                    </td>
+                    <td>
                     @Html.DisplayFor(modelItem => item.headdirection)
-                </td>
-                <td>
+                    </td>
+                    <td>
                     @Html.DisplayFor(modelItem => item.HairColor)
-                </td>
-                <td>
+                    </td>
+                    <td>
                     @Html.DisplayFor(modelItem => item.facebundles)
-                </td>
-                <td>
+                    </td>
+                    <td>
                     @Html.DisplayFor(modelItem => item.colorvalue)
-                </td>
-                <td>
+                    </td>
+                    <td>
                     @Html.DisplayFor(modelItem => item.structurevalue)
-                </td>
-                <td>
+                    </td>
+                    <td>
                     @Html.DisplayFor(modelItem => item.textilefunctionvalue)
-                </td>
-                <td>
+                    </td>
+                    <td>
                     @Html.DisplayFor(modelItem => item.depth)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-                </td>
-            </tr>
+                    </td>
+                    <td>
+                        <a asp-action="UnauthDetails" asp-route-id="@item.id">Details</a> 
+                    </td>
+                </tr>
         }
     </tbody>
 </table>
@@ -98,23 +95,23 @@
 
                 @if (ViewBag.CurrentPage > 1)
                 {
-                        <li class="page-item">
-                            <a class="page-link" href="@Url.Action("Index", new { pageNum = ViewBag.CurrentPage - 1 })">Previous</a>
-                        </li>
+                            <li class="page-item">
+                                <a class="page-link" href="@Url.Action("UnauthenticatedData", new { pageNum = ViewBag.CurrentPage - 1 })">Previous</a>
+                            </li>
                 }
 
                 @for (int i = 1; i <= ViewBag.TotalPages; i++)
                 {
-                        <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
-                            <a class="page-link" href="@Url.Action("Index", new { pageNum = i })">@i</a>
-                        </li>
+                            <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                                <a class="page-link" href="@Url.Action("UnauthenticatedData", new { pageNum = i })">@i</a>
+                            </li>
                 }
 
                 @if (ViewBag.CurrentPage < ViewBag.TotalPages)
                 {
-                        <li class="page-item">
-                            <a class="page-link" href="@Url.Action("Index", new { pageNum = ViewBag.CurrentPage + 1 })">Next</a>
-                        </li>
+                            <li class="page-item">
+                                <a class="page-link" href="@Url.Action("UnauthenticatedData", new { pageNum = ViewBag.CurrentPage + 1 })">Next</a>
+                            </li>
                 }
 
             </ul>

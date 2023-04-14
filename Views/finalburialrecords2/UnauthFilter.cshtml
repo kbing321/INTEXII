@@ -1,31 +1,17 @@
-﻿@model INTEXII.Models.finalburialrecords2
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model finalburialrecords2
 
-@{
-    ViewData["Title"] = "Create";
-}
+<h1>Filter</h1>
 
-<h1>Create</h1>
-
-<h4>Burial Data</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="id" class="control-label">ID</label>
-                <input asp-for="id" class="form-control" />
-                <span asp-validation-for="id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="burialid" class="control-label">Burial ID</label>
-                <input asp-for="burialid" class="form-control" />
-                <span asp-validation-for="burialid" class="text-danger"></span>
-            </div>
-            <h4><u>Mummy Information:</u></h4>
+        <form asp-action="UnauthFilterRecords">
             <div class="form-group">
                 <label asp-for="sex" class="control-label">Sex</label>
                 <select asp-for="sex" class="form-control">
+                    <option value=""></option>
                     <option value="F">Female</option>
                     <option value="M">Male</option>
                     <option value="U">Unknown</option>
@@ -35,6 +21,7 @@
             <div class="form-group">
                 <label asp-for="ageatdeath" class="control-label">Age at Death</label>
                 <select asp-for="ageatdeath" class="form-control">
+                    <option value=""></option>
                     <option value="A">Adult</option>
                     <option value="C">Child</option>
                     <option value="I">Infant</option>
@@ -45,13 +32,9 @@
                 <span asp-validation-for="ageatdeath" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="length" class="control-label">Body Length</label>
-                <input asp-for="length" class="form-control" />
-                <span asp-validation-for="length" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="headdirection" class="control-label">Head Direction</label>
                 <select asp-for="headdirection" class="form-control">
+                    <option value=""></option>
                     <option value="E">East</option>
                     <option value="W">West</option>
                 </select>
@@ -65,6 +48,7 @@
             <div class="form-group">
                 <label asp-for="facebundles" class="control-label">Face Bundles</label>
                 <select asp-for="facebundles" class="form-control">
+                    <option value=""></option>
                     <option value="Y">Yes</option>
                     <option value="N">No</option>
                 </select>
@@ -91,52 +75,11 @@
                 <label asp-for="depth" class="control-label">Burial Depth</label>
                 <input asp-for="depth" class="form-control" />
                 <span asp-validation-for="depth" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="southtohead" class="control-label">South to Head</label>
-                <input asp-for="southtohead" class="form-control" />
-                <span asp-validation-for="southtohead" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="westtohead" class="control-label">West to Head</label>
-                <input asp-for="westtohead" class="form-control" />
-                <span asp-validation-for="westtohead" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="southtofeet" class="control-label">South to Feet</label>
-                <input asp-for="southtofeet" class="form-control" />
-                <span asp-validation-for="southtofeet" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="westtofeet" class="control-label">West to Feet</label>
-                <input asp-for="westtofeet" class="form-control" />
-                <span asp-validation-for="westtofeet" class="text-danger"></span>
-            </div>
-            <h4><u>Image/Observations/Notes:</u></h4>
-            <div class="form-group">
-                <label asp-for="filename" class="control-label">Image File Name</label>
-                <input asp-for="filename" class="form-control" />
-                <span asp-validation-for="filename" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Observations" class="control-label">Observations</label>
-                <input asp-for="Observations" class="form-control" />
-                <span asp-validation-for="Observations" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Notes" class="control-label">Notes</label>
-                <input asp-for="Notes" class="form-control" />
-                <span asp-validation-for="Notes" class="text-danger"></span>
             </div><br />
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-                <a class="btn btn-outline-dark" asp-action="Index">Back</a>
+                <input type="submit" value="Filter Records" class="btn btn-primary" />
+                <a class="btn btn-outline-dark" asp-action="UnauthenticatedData">Back</a>
             </div>
         </form>
     </div>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
-
