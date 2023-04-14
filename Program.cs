@@ -51,7 +51,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient();
 builder.Services.AddSingleton<InferenceSession>(
-    new InferenceSession("supervisedmodel (3).onnx")
+    new InferenceSession("wwwroot/supervisedmodel (3).onnx")
 );
 
 
