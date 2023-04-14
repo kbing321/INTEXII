@@ -1,0 +1,21 @@
+
+{
+    "region" : "us-east-1",
+    "configuration" : "Release",
+    "framework"     : "net6.0",
+    "self-contained" : true,
+    "application"    : "INTEXIIHopethisworks",
+    "environment"    : "INTEXIIHopethisworks-dev",
+    "app-path"       : "/",
+    "iis-website"    : "Default Web Site",
+    "enable-xray"    : false,
+    "enhanced-health-type" : "basic",
+    "additional-options"   : "\"aws:autoscaling:launchconfiguration,SecurityGroups\"=\"sg-01da5fa53902c8502\";\"aws:ec2:vpc,Subnets\"=\"subnet-01b7b3b491773c0c1\"",
+    "solution-stack"       : "64bit Windows Server 2019 v2.11.2 running IIS 10.0",
+    "environment-type"     : "SingleInstance",
+    "cname"                : "intexiihopethisworks-dev",
+    "instance-type"        : "t2.micro",
+    "key-pair"             : "INTEXWinterGroup10",
+    "instance-profile"     : "aws-elasticbeanstalk-ec2-role",
+    "service-role"         : "aws-elasticbeanstalk-service-role"
+}
