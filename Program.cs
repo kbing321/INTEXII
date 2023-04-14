@@ -44,8 +44,6 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 //});
 
 
-
-
 //Second line(add Roles) is authenicat
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false) //was true it made it false
     .AddEntityFrameworkStores<RDSContext>();
@@ -111,6 +109,7 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+//app.UseHttpsRedirection();
 
 app.MapControllerRoute(
     name: "default",
