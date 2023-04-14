@@ -21,6 +21,7 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
     options.CheckConsentNeeded = context => true;
 
     options.MinimumSameSitePolicy = SameSiteMode.None;
+    options.ConsentCookie.SecurePolicy = CookieSecurePolicy.Always;
 });
 
 // Add services to the container.
@@ -36,23 +37,30 @@ builder.Services.AddHsts(options =>
 builder.Services.AddDbContext<RDSContext>(options =>
     options.UseNpgsql(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-builder.Services.AddHttpsRedirection(options =>
-{
-    options.RedirectStatusCode = (int)HttpStatusCode.TemporaryRedirect;
-    options.HttpsPort = 5001;
-});
+//builder.Services.AddHttpsRedirection(options =>
+//{
+//    options.RedirectStatusCode = (int)HttpStatusCode.TemporaryRedirect;
+//    options.HttpsPort = 5001;
+//});
+
+
 
 
 //Second line(add Roles) is authenicat
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false) //was true it made it false
     .AddEntityFrameworkStores<RDSContext>();
-    //.AddRoles<IdentityRole>();
+//.AddRoles<IdentityRole>();
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient();
 builder.Services.AddSingleton<InferenceSession>(
     new InferenceSession("wwwroot/supervisedmodel (3).onnx")
 );
+builder.Services.AddSingleton<InferenceSession>(provider => {
+    var env = provider.GetService<IWebHostEnvironment>();
+    var modelPath = Path.Combine(env.ContentRootPath, "wwwroot", "supervisedmodel (3).onnx");
+    return new InferenceSession(modelPath);
+});
 
 
 
@@ -96,14 +104,13 @@ app.Use(async (context, next) =>
     context.Response.Headers.Add("Content-Security-Policy", "{default-src 'self'; img-src 'self' cdn.example.com}");
     await next();
 });
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseHttpsRedirection();
 
 app.MapControllerRoute(
     name: "default",
