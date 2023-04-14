@@ -161,5 +161,26 @@ namespace INTEXII.Controllers
         {
             return (_context.finalburialrecords2?.Any(e => e.id == id)).GetValueOrDefault();
         }
+
+        public IActionResult FilterRecords(string sex, string burialdepth, string facebundles, string ageatdeath, string headdirection, string colorvalue, string structurevalue, string textilefunctionvalue, string eastwest, string area, string haircolor)
+        {
+            var burials = _context.finalburialrecords2;
+
+            // Your code to filter records based on the form values goes here
+            var filteredRecords = burials.Where(b =>
+           (string.IsNullOrEmpty(sex) || b.sex == sex) &&
+           (string.IsNullOrEmpty(ageatdeath) || b.ageatdeath == ageatdeath) &&
+           (string.IsNullOrEmpty(headdirection) || b.headdirection == headdirection) &&
+           (string.IsNullOrEmpty(haircolor) || b.HairColor == haircolor) &&
+           (string.IsNullOrEmpty(facebundles) || b.facebundles == facebundles) &&
+           (string.IsNullOrEmpty(colorvalue) || b.colorvalue == colorvalue) &&
+           (string.IsNullOrEmpty(structurevalue) || b.structurevalue == structurevalue) &&
+           (string.IsNullOrEmpty(textilefunctionvalue) || b.textilefunctionvalue == textilefunctionvalue) &&
+           (string.IsNullOrEmpty(burialdepth) || b.depth == burialdepth)).ToList();
+
+            // Return the filtered records to the BurialRecord view
+            return View("BurialRecord", filteredRecords);
+        }
+
     }
 }
